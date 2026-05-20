@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -149,6 +149,19 @@ export function MenuCatalog({ categories }: MenuCatalogProps) {
   const { locale, t } = useI18n();
   const [activeCategory, setActiveCategory] = useState(0);
   const [selection, setSelection] = useState<MenuItemRef>(DEFAULT_SELECTION);
+  const foodsSectionRef = useRef<HTMLDivElement>(null);
+
+  const scrollToFoods = useCallback(() => {
+    foodsSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  const selectCategory = useCallback(
+    (index: number) => {
+      setActiveCategory(index);
+      requestAnimationFrame(() => scrollToFoods());
+    },
+    [scrollToFoods],
+  );
 
   const selected = useMemo(
     () => getMenuItem(categories, selection),
@@ -168,7 +181,7 @@ export function MenuCatalog({ categories }: MenuCatalogProps) {
             <li key={category.id}>
               <button
                 type="button"
-                onClick={() => setActiveCategory(index)}
+                onClick={() => selectCategory(index)}
                 className={cn(
                   "w-full rounded-xl border px-4 py-3 text-left transition-all duration-300",
                   activeCategory === index
@@ -185,13 +198,21 @@ export function MenuCatalog({ categories }: MenuCatalogProps) {
         </ul>
       </nav>
 
-      <div className="min-w-0">
+      <div
+        id="menu-foods"
+        ref={foodsSectionRef}
+        className="min-w-0 scroll-mt-24 sm:scroll-mt-28"
+      >
         <div className="lg:hidden">
           <Accordion
             type="single"
             collapsible
             defaultValue={categories[0]?.id}
             className="rounded-2xl border border-sapphire/15 bg-navy/50"
+            onValueChange={(value) => {
+              if (!value) return;
+              window.setTimeout(() => scrollToFoods(), 120);
+            }}
           >
             {categories.map((category, categoryIndex) => (
               <AccordionItem
@@ -295,10 +316,10 @@ function MenuPreview({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/25 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-5">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-gold">{categoryLine}</p>
+          <p className="text-[10px] uppercase tracking-[0.32em] text-sky-300">{categoryLine}</p>
           <p className="text-display mt-2 text-2xl leading-tight text-ivory">{selected.name}</p>
           {selected.price ? (
-            <p className="mt-2 text-lg font-medium tabular-nums text-gold">{selected.price}</p>
+            <p className="mt-2 text-lg font-medium tabular-nums text-sky-300">{selected.price}</p>
           ) : null}
           {selected.description ? (
             <p className="mt-2 text-sm leading-relaxed text-ivory/70">{selected.description}</p>
