@@ -316,10 +316,10 @@ function MenuPreview({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/25 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-5">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-sky-300">{categoryLine}</p>
+          <p className="text-[10px] uppercase tracking-[0.32em] text-gold">{categoryLine}</p>
           <p className="text-display mt-2 text-2xl leading-tight text-ivory">{selected.name}</p>
           {selected.price ? (
-            <p className="mt-2 text-lg font-medium tabular-nums text-sky-300">{selected.price}</p>
+            <p className="mt-2 text-lg font-medium tabular-nums text-gold">{selected.price}</p>
           ) : null}
           {selected.description ? (
             <p className="mt-2 text-sm leading-relaxed text-ivory/70">{selected.description}</p>
