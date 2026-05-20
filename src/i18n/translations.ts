@@ -35,6 +35,13 @@ export const translations: Record<Locale, Record<string, string>> = {
     "intro.p3": " und ",
     "intro.e3": "unvergesslichen Geschmack",
     "intro.p4": " vereint.",
+    "intro.ingredients.title": "Beste Zutaten",
+    "intro.ingredients.p1":
+      "Unsere täglich frischen Produkte, dazu zählen auch unsere Fischspezialitäten, sorgen für besten Geschmack und Ausgewogenheit auf Ihrem Teller. Die sorgfältige Auswahl unserer Zutaten beginnt schon bei unserem nativen, kaltgepressten Bio-Olivenöl, das wir direkt vom Erzeuger in Griechenland beziehen.",
+    "intro.ingredients.p2": "Diesen Qualitätsanspruch pflegen wir seit über 30 Jahren.",
+    "intro.ingredients.p3": "Ihr leibliches Wohl liegt uns am Herzen.",
+    "intro.ingredients.alt":
+      "Frischer griechischer Salat mit Feta, Tomaten und Blattsalat in einer weißen Schale auf rustikalem Holztisch",
     "signature.eyebrow": "Die Speisekarte",
     "signature.title1": "Signature-",
     "signature.title2": "Gerichte",
@@ -154,6 +161,13 @@ export const translations: Record<Locale, Record<string, string>> = {
     "intro.p3": " and ",
     "intro.e3": "unforgettable taste",
     "intro.p4": ".",
+    "intro.ingredients.title": "Finest Ingredients",
+    "intro.ingredients.p1":
+      "Our daily fresh products — including our fish specialties — ensure the best taste and balance on your plate. The careful selection of our ingredients begins with our native, cold-pressed organic olive oil, which we source directly from the producer in Greece.",
+    "intro.ingredients.p2": "We have maintained this quality commitment for over 30 years.",
+    "intro.ingredients.p3": "Your wellbeing is close to our hearts.",
+    "intro.ingredients.alt":
+      "Fresh Greek salad with feta, tomatoes, and leafy greens in a white bowl on a rustic wooden table",
     "signature.eyebrow": "The Menu",
     "signature.title1": "Signature",
     "signature.title2": "dishes",
