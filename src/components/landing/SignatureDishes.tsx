@@ -13,15 +13,15 @@ export function SignatureDishes() {
   const dishes = useMemo(
     () =>
       [
-        { nameKey: "dish1.name", descKey: "dish1.desc", price: "7,50 €", img: dish1 },
-        { nameKey: "dish2.name", descKey: "dish2.desc", price: "8,50 €", img: dish2 },
-        { nameKey: "dish3.name", descKey: "dish3.desc", price: "6,50 €", img: dish3 },
+        { nameKey: "dish1.name", descKey: "dish1.desc", price: "7,00 €", img: dish1 },
+        { nameKey: "dish2.name", descKey: "dish2.desc", price: "17,50 €", img: dish2 },
+        { nameKey: "dish3.name", descKey: "dish3.desc", price: "25,00 €", img: dish3 },
       ] as const,
     [],
   );
 
   return (
-    <section id="menu" className="relative border-t border-white/5 bg-stone px-6 py-24 sm:py-32">
+    <section id="menu" className="relative border-t border-sapphire/10 bg-stone px-6 py-24 sm:py-32">
       <div ref={ref} className="reveal mx-auto max-w-7xl">
         <div className="mb-14 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>

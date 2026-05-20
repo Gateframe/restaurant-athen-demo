@@ -45,7 +45,7 @@ const DialogContent = React.forwardRef<
       <DialogOverlay
         className={
           isSoft
-            ? "z-50 bg-[rgba(10,8,7,0.78)] backdrop-blur-[2px] duration-500 ease-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+            ? "z-50 bg-midnight/80 backdrop-blur-[2px] duration-500 ease-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
             : undefined
         }
       />
@@ -65,7 +65,7 @@ const DialogContent = React.forwardRef<
           className={cn(
             "absolute rounded-sm opacity-90 transition-[opacity,background-color,transform] duration-300 ease-out hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:ring-offset-2 focus:ring-offset-transparent disabled:pointer-events-none",
             isSoft
-              ? "right-2 top-2 z-[60] grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-[rgba(12,10,9,0.55)] text-ivory shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md hover:border-white/25 hover:bg-[rgba(18,14,12,0.72)] sm:right-3 sm:top-3"
+              ? "right-2 top-2 z-[60] grid h-10 w-10 place-items-center rounded-full border border-sapphire/25 bg-glass-strong text-ivory shadow-luxury backdrop-blur-md hover:border-sapphire/40 hover:bg-navy/90 sm:right-3 sm:top-3"
               : "right-4 top-4 ring-offset-background data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
           )}
         >

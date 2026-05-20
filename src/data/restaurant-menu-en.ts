@@ -1,177 +1,252 @@
-import type { MenuSection } from "./restaurant-menu-types";
-export const MENU_SECTIONS_EN: MenuSection[] = [
+import type { MenuCategory } from "./restaurant-menu-types";
+
+export const MENU_CATEGORIES_EN: MenuCategory[] = [
   {
-    title: "Cold Starters",
-    items: [
-      ["Tzatziki", "Greek yogurt with cucumber, garlic, and olive oil."],
-      ["Eggplant Salad", "Smoked eggplant spread with Mediterranean herbs."],
-      ["Kalamari Salad", "Tender squid salad with fresh Mediterranean flavors."],
-      ["Taramosalata", "Traditional fish roe spread with olive oil and lemon."],
-      ["Cold Meze Platter", "Selection of traditional Greek cold appetizers."],
+    id: "vorspeisen",
+    title: "Appetizers",
+    titleEn: "Appetizers",
+    subsections: [
+      {
+        title: "Cold Appetizers",
+        items: [
+          {
+            name: "Tzatziki",
+            description: "spiced yogurt with fresh cucumber and garlic",
+            price: "6.00 €",
+          },
+          { name: "Taramas", description: "fish roe spread", price: "6.50 €" },
+          { name: "Melitzanosalata", description: "eggplant cream", price: "7.00 €" },
+          {
+            name: "Dolmadakia",
+            description: "vine leaves stuffed with rice, served with tzatziki",
+            price: "7.00 €",
+          },
+          { name: "Tirosalata", description: "feta and pepper cream", price: "7.50 €" },
+          {
+            name: "Feta Portion",
+            description: "sheep's cheese with onions, olives, and peppers",
+            price: "7.00 €",
+          },
+          {
+            name: "Mixed Appetizer Platter",
+            description: "per person",
+            price: "12.00 €",
+          },
+        ],
+      },
+      {
+        title: "Warm Appetizers",
+        items: [
+          { name: "Pita", description: "with or without garlic", price: "2.50 €" },
+          { name: "Bread", description: "grilled, with or without garlic", price: "2.50 €" },
+          { name: "Saganaki", description: "baked feta", price: "8.00 €" },
+          { name: "Halloumi", description: "grilled Cypriot cheese", price: "8.50 €" },
+          { name: "Eggplant", description: "fried, with tzatziki", price: "7.00 €" },
+          { name: "Zucchini", description: "fried, with tzatziki", price: "7.00 €" },
+          {
+            name: "Red Pepper",
+            description: "stuffed with feta, grilled",
+            price: "8.50 €",
+          },
+          {
+            name: "Artichokes",
+            description: "from the grill, with lemon sauce",
+            price: "8.00 €",
+          },
+          { name: "Grilled Octopus", description: "grilled squid", price: "14.50 €" },
+          { name: "Mixed Appetizer Platter", description: "", price: "18.00 €" },
+        ],
+      },
     ],
   },
   {
-    title: "Warm Starters",
-    items: [
-      ["Dolmades", "Stuffed vine leaves with rice and herbs."],
-      ["Grilled Aubergine & Zucchini", "Chargrilled vegetables served with tzatziki."],
-      ["Grilled Peppers", "Roasted peppers with garlic and olive oil."],
-      ["Mussels from the Oven", "Baked mussels finished with herb butter."],
-      ["Grilled Octopus", "Tender octopus grilled Mediterranean style."],
-      ["Warm Meze Platter", "Selection of warm Greek appetizers and specialties."],
-      ["Kolokithokeftedes", "Greek zucchini fritters served with tzatziki."],
+    id: "hauptgerichte",
+    title: "Main Dishes",
+    titleEn: "Main Dishes",
+    subsections: [
+      {
+        title: "Fish Dishes",
+        items: [
+          {
+            name: "King Prawns",
+            description: "grilled, with potatoes and vegetables",
+            price: "25.00 €",
+          },
+          {
+            name: "Calamari",
+            description: "grilled, with potatoes and vegetables",
+            price: "19.00 €",
+          },
+          {
+            name: "Fish Platter",
+            description: "calamari, king prawns, Atlantic sole fillet, with potatoes and vegetables",
+            price: "25.00 €",
+          },
+        ],
+      },
+      {
+        title: "Grill Specialties",
+        items: [
+          {
+            name: "Souvlaki",
+            description: "pork fillet on skewer, with rice and tzatziki",
+            price: "17.50 €",
+          },
+          {
+            name: "Gyros",
+            description: "seasoned meat from the spit, with rice and tzatziki",
+            price: "16.50 €",
+          },
+          {
+            name: "Bifteki",
+            description: "beef patty stuffed with cheese, rice and vegetables",
+            price: "17.50 €",
+          },
+          {
+            name: "Kotopoulo",
+            description: "grilled chicken fillet with tzatziki and vegetables",
+            price: "17.50 €",
+          },
+          {
+            name: "Ouzo Platter",
+            description: "pork skewer, gyros, rice and vegetables",
+            price: "17.50 €",
+          },
+          {
+            name: "Grill Platter",
+            description: "pork skewer, beef patty, gyros, rice and vegetables",
+            price: "18.50 €",
+          },
+          {
+            name: "Athen Platter",
+            description: "chicken fillet, beef patty, gyros, rice and vegetables",
+            price: "19.00 €",
+          },
+        ],
+      },
     ],
   },
   {
-    title: "Soups",
-    items: [
-      ["Bean Soup", "Traditional Greek bean soup."],
-      ["Tomato Soup", "Rich tomato soup with Mediterranean herbs."],
-      ["Greek Fish Soup", "Classic seafood soup prepared Greek style."],
-    ],
-  },
-  {
-    title: "Cheese Specialties",
-    items: [
-      ["Mastelo", "Traditional grilled Greek cheese."],
-      ["Tiropitakia", "Crispy filo pastries filled with cheese."],
-      ["Grilled Feta", "Warm feta cheese grilled to perfection."],
-      ["Saganaki", "Golden fried Greek cheese."],
-      ["Stuffed Paprika", "Peppers filled with feta cheese."],
-    ],
-  },
-  {
-    title: "Salads",
-    items: [
-      ["Tuna Salad", "Fresh salad with tuna and Mediterranean dressing."],
-      ["Greek Village Salad", "Classic Greek salad with tomato, cucumber, feta, and olives."],
-      ["Chicken Salad", "Fresh mixed salad with grilled chicken."],
-    ],
-  },
-  {
-    title: "Side Dishes",
-    items: [
-      ["Pita Bread", "Traditional Greek flatbread."],
-      ["Garlic Pita", "Warm pita bread with garlic."],
-      ["French Fries", "Golden crispy fries."],
-      ["Cheese Garlic Bread", "Garlic bread topped with melted cheese."],
-      ["Vegetarian Plate", "Grilled vegetables with rice and salad."],
-      ["Metaxa Mushroom Sauce", "Creamy Metaxa sauce with mushrooms."],
-    ],
-  },
-  {
-    title: "Fish & Seafood",
-    items: [
-      ["Grilled Kalamari", "Grilled squid served with salad and rice."],
-      ["Grilled Sea Bream Fillet", "Fresh fish fillet with Mediterranean sides."],
-      ["Grilled King Prawns", "Large grilled prawns with vegetables."],
-      ["Grilled Salmon Fillet", "Fresh salmon served Mediterranean style."],
-      ["Seafood Platter", "Selection of grilled seafood specialties."],
-      ["Fresh Dorade", "Whole grilled sea bream with vegetables."],
-    ],
-  },
-  {
-    title: "Gyros Specialties",
-    items: [
-      ["Classic Gyros", "Traditional Greek gyros with salad, rice, and tzatziki."],
-      ["Baked Gyros Special", "Gyros baked with mushrooms and Metaxa sauce."],
-    ],
-  },
-  {
-    title: "Grill Specialties",
-    items: [
-      ["Giaourtlou", "Traditional Greek minced meat specialty with yogurt sauce."],
-      ["Bifteki", "Greek stuffed minced meat steak with feta."],
-      ["Souvlaki", "Grilled meat skewers with Greek sides."],
-      ["Stuffed Souvlaki", "Souvlaki filled with feta cheese."],
-      ["Chicken Schnitzel", "Crispy chicken schnitzel with fries."],
-      ["Lamb Chop Crown", "Premium grilled lamb chops."],
-    ],
-  },
-  {
-    title: "Mixed Grill Platters",
-    items: [
-      ["Paros Plate", "Gyros and calamari served with Greek sides."],
-      ["Irodion Plate", "Combination of gyros, souvlaki, and Greek meat specialties."],
-      ["House Plate", "Large mixed grill selection with lamb chop and meats."],
-      ["Village Plate", "Traditional Greek mixed grill platter."],
-      ["Platon Platter", "Large sharing platter for groups."],
-    ],
-  },
-  {
-    title: "Filets from the Grill",
-    items: [
-      ["Lamb Filet Plate", "Tender lamb filet with herb butter."],
-      ["Beef Filet", "Premium beef filet with pepper sauce."],
-      ["Chicken Filet", "Grilled chicken filet with mushroom sauce."],
-      ["Turkey Breast Filet", "Tender turkey filet with herb butter."],
-    ],
-  },
-  {
-    title: "Oven Specialties",
-    items: [
-      ["Kritharaki", "Greek-style baked pasta with minced meat and cheese."],
-      ["Moussaka", "Traditional layered Greek casserole with eggplant and minced meat."],
-      ["Vegetarian Moussaka", "Vegetarian version of the Greek classic."],
-      ["Lamb Shank with Giant Beans", "Slow-cooked lamb with giant beans and cheese."],
-      ["Lamb Shank with Kritharaki", "Braised lamb served with Greek pasta."],
-      ["Lamb Shank with Green Beans", "Tender lamb with green beans and Mediterranean sauce."],
-    ],
-  },
-  {
+    id: "desserts",
     title: "Desserts",
-    items: [
-      ["Cheesecake", "Creamy cheesecake with berry topping."],
-      ["Chocolate Soufflé", "Warm chocolate cake served with vanilla ice cream."],
-      ["Greek Yogurt with Honey & Nuts", "Traditional Greek yogurt with honey and walnuts."],
-      ["Galaktoboureko", "Greek filo pastry filled with vanilla custard."],
-      ["Baklava with Ice Cream", "Layered filo pastry with honey and nuts."],
-      ["Dessert Platter", "Selection of traditional Greek desserts."],
-      ["Greek Chocolate Cake", "Rich chocolate cake Greek style."],
+    titleEn: "Desserts",
+    subsections: [
+      {
+        title: "",
+        items: [
+          {
+            name: "Halva",
+            description: "traditional sesame dessert",
+            price: "6.00 €",
+          },
+          { name: "Yogurt with Honey & Walnuts", description: "", price: "7.00 €" },
+          { name: "Mixed Ice Cream", description: "", price: "6.00 €" },
+          { name: "Mixed Ice Cream with Cream", description: "", price: "6.50 €" },
+        ],
+      },
     ],
   },
   {
-    title: "Hot Drinks",
-    items: [
-      ["Greek Mocha", "Traditional Greek coffee."],
-      ["Coffee", "Classic freshly brewed coffee."],
-      ["Cappuccino", "Italian-style milk coffee."],
-      ["Espresso", "Strong espresso shot."],
-      ["Latte Macchiato", "Creamy layered milk coffee."],
-      ["Hot Chocolate", "Warm chocolate drink with cream."],
-    ],
-  },
-  {
-    title: "Aperitifs",
-    items: [
-      ["Prosecco", "Sparkling Italian wine."],
-      ["Campari", "Classic bitter aperitif."],
-      ["Aperol", "Refreshing Italian aperitif."],
-      ["Hugo", "Elderflower sparkling cocktail."],
-      ["Lillet", "French wine-based aperitif."],
-    ],
-  },
-  {
-    title: "Drinks & Spirits",
-    items: [
-      ["Ouzo", "Traditional Greek anise spirit."],
-      ["Baileys", "Cream liqueur."],
-      ["Ramazzotti", "Italian herbal liqueur."],
-      ["Bacardi Cola", "Rum mixed with cola."],
-      ["Vodka Lemon", "Vodka with lemon soda."],
-      ["Whisky Cola", "Whisky served with cola."],
-      ["Gin Tonic", "Classic gin and tonic."],
-      ["Metaxa Special", "Premium Greek amber spirit."],
-    ],
-  },
-  {
-    title: "Greek Wines",
-    items: [
-      ["Red House Wine", "Smooth traditional Greek red wine."],
-      ["Rosé Wine", "Light and refreshing rosé."],
-      ["White House Wine", "Fresh Greek white wine."],
-      ["Retsina", "Classic Greek wine with pine aroma."],
-      ["Merlot", "Rich and balanced red wine."],
+    id: "getraenke",
+    title: "Drinks",
+    titleEn: "Drinks",
+    subsections: [
+      {
+        title: "Aperitifs",
+        items: [
+          { name: "Glass of Prosecco", description: "", price: "4.00 €" },
+          { name: "Campari with soda or orange juice", description: "", price: "6.50 €" },
+          { name: "Aperol Spritz", description: "", price: "8.00 €" },
+          { name: "Lillet Wild Berry", description: "", price: "8.50 €" },
+        ],
+      },
+      {
+        title: "Non-Alcoholic",
+        items: [
+          { name: "Coca-Cola / Coca-Cola Zero", description: "", price: "4.00 €" },
+          { name: "Lemon soda", description: "", price: "3.00 €" },
+          { name: "Spezi", description: "", price: "4.50 €" },
+          {
+            name: "Juices / Nectars",
+            description: "apple, orange, blackcurrant, rhubarb, mango, passion fruit",
+            price: "3.50 €",
+          },
+          { name: "Juice spritzer", description: "", price: "5.00 €" },
+          {
+            name: "Mineral Water",
+            description: "0.2 l — 2.50 € · 0.5 l — 5.00 € · 0.75 l — 6.00 €",
+            price: "",
+          },
+        ],
+      },
+      {
+        title: "Beer",
+        items: [
+          { name: "Budweiser Budvar", description: "", price: "4.20 €" },
+          { name: "Augustiner Hell", description: "", price: "4.80 €" },
+          { name: "Augustiner Dunkel", description: "", price: "4.80 €" },
+          { name: "Augustiner Radler", description: "", price: "4.80 €" },
+          { name: "Augustiner Non-Alcoholic", description: "", price: "4.80 €" },
+          { name: "Augustiner Wheat Beer", description: "", price: "5.00 €" },
+          { name: "Erdinger Wheat Beer", description: "", price: "5.00 €" },
+          { name: "Erdinger Dark", description: "", price: "5.00 €" },
+          { name: "Erdinger Light", description: "", price: "5.00 €" },
+          { name: "Erdinger Non-Alcoholic", description: "", price: "5.00 €" },
+          { name: "Russ / Cola Wheat Beer", description: "", price: "5.00 €" },
+        ],
+      },
+      {
+        title: "Wines by the Glass",
+        items: [
+          { name: "House White dry", description: "", price: "6.00 €" },
+          { name: "House White semi-sweet", description: "", price: "6.00 €" },
+          { name: "House Red dry", description: "", price: "6.00 €" },
+          { name: "House Red semi-sweet", description: "", price: "6.00 €" },
+          { name: "Rosé dry", description: "", price: "6.00 €" },
+          { name: "Retsina", description: "", price: "6.00 €" },
+        ],
+      },
+      {
+        title: "White Bottles",
+        items: [
+          { name: "Retsina", description: "", price: "20.00 €" },
+          { name: "Lexis K", description: "", price: "38.00 €" },
+          { name: "Gerovasiliou Sauvignon Blanc", description: "", price: "48.00 €" },
+        ],
+      },
+      {
+        title: "Red Bottles",
+        items: [
+          { name: "Atelier Erythro", description: "", price: "22.50 €" },
+          { name: "M Classique", description: "", price: "26.50 €" },
+          { name: "Mega Spileo Cabernet Sauvignon", description: "", price: "41.00 €" },
+        ],
+      },
+      {
+        title: "Spirits",
+        items: [
+          { name: "Tsipouro", description: "", price: "4.50 €" },
+          { name: "Ouzo", description: "", price: "3.00 €" },
+          { name: "Metaxa 5 Stars", description: "", price: "4.00 €" },
+          { name: "Metaxa Very Old", description: "", price: "7.50 €" },
+          { name: "Ramazzotti", description: "", price: "3.00 €" },
+          { name: "Williams Pear", description: "", price: "3.50 €" },
+          { name: "Scotch Whisky", description: "", price: "7.00 €" },
+        ],
+      },
+      {
+        title: "Hot Drinks",
+        items: [
+          { name: "Greek Coffee", description: "", price: "3.50 €" },
+          { name: "Frappé", description: "", price: "4.50 €" },
+          { name: "Coffee", description: "", price: "3.50 €" },
+          { name: "Cappuccino", description: "", price: "4.00 €" },
+          { name: "Latte Macchiato", description: "", price: "4.50 €" },
+          { name: "Espresso / Espresso Macchiato", description: "", price: "3.00 €" },
+          { name: "Tea", description: "", price: "3.00 €" },
+          { name: "Mulled Wine", description: "", price: "6.00 €" },
+        ],
+      },
     ],
   },
 ];

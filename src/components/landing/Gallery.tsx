@@ -264,7 +264,7 @@ function ModularTile({
         className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out will-change-transform group-hover:scale-[1.03] ${imgClass} brightness-[1.04] contrast-[1.04] saturate-[1.05]`}
         draggable={false}
       />
-      <div className="pointer-events-none absolute inset-0 bg-[rgba(22,18,15,0.06)] transition-colors duration-500 group-hover:bg-[rgba(22,18,15,0.02)]" />
+      <div className="pointer-events-none absolute inset-0 bg-navy/10 transition-colors duration-500 group-hover:bg-navy/5" />
     </button>
   );
 }

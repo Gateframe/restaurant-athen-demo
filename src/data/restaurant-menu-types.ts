@@ -1,18 +1,23 @@
-export type MenuItemRow = readonly [string, string];
-
-export type MenuSection = {
-  readonly title: string;
-  readonly items: readonly MenuItemRow[];
-};
-
-export type FeaturedEntry = {
+export type MenuItem = {
   readonly name: string;
   readonly description: string;
-  readonly si: number;
-  readonly ii: number;
+  readonly price: string;
 };
 
-export type FeaturedBlock = {
+export type MenuSubsection = {
   readonly title: string;
-  readonly entries: readonly FeaturedEntry[];
+  readonly items: readonly MenuItem[];
+};
+
+export type MenuCategory = {
+  readonly id: string;
+  readonly title: string;
+  readonly titleEn: string;
+  readonly subsections: readonly MenuSubsection[];
+};
+
+export type MenuItemRef = {
+  readonly categoryIndex: number;
+  readonly subsectionIndex: number;
+  readonly itemIndex: number;
 };

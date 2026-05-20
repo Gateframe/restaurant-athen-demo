@@ -68,13 +68,14 @@ export function ReservationCTA() {
             src={bg}
             alt={t("reservation.ariaRoom")}
             loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover brightness-[1.05] contrast-[1.05] saturate-[1.06]"
+            className="absolute inset-0 h-full w-full object-cover brightness-[0.72] contrast-[1.08] saturate-[0.95]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(34,26,20,0.68)] via-[rgba(26,20,16,0.32)] to-[rgba(18,14,12,0.18)]" />
+          <div className="absolute inset-0 reservation-overlay" />
+          <div className="absolute inset-0 bg-midnight/35" aria-hidden />
 
           <div className="relative z-10 max-w-2xl px-6 py-20 text-center">
             <span className="eyebrow">{t("reservation.eyebrow")}</span>
-            <h2 className="text-display mt-6 text-5xl text-ivory [text-shadow:0_1px_2px_rgba(12,10,8,0.45),0_4px_36px_rgba(0,0,0,0.3),0_0_64px_rgba(243,239,226,0.1)] sm:text-7xl">
+            <h2 className="text-display mt-6 text-5xl text-ivory text-shadow-hero sm:text-7xl">
               {t("reservation.title1")}
               <br />
               <span className="italic text-gold">{t("reservation.title2")}</span>

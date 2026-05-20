@@ -1,6 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import { Menu as MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import logoDionysos from "@/assets/logo-dionysos.png";
+import logoAthen from "@/assets/logo-athen.png";
 import { useI18n } from "@/i18n";
 import type { Locale } from "@/i18n/types";
 
@@ -47,23 +48,24 @@ export function Navbar() {
           }`}
         >
           <nav
-            className="pointer-events-auto mx-[2px] my-5 flex h-[62px] w-full max-w-[560px] items-center justify-between rounded-full border border-white/[0.14] bg-[rgba(32,26,22,0.42)] px-4 py-0 shadow-[0_4px_32px_rgba(18,12,10,0.35)] backdrop-blur-2xl sm:max-w-[641px] sm:px-4"
+            className="pointer-events-auto mx-[2px] my-5 flex h-[62px] w-full max-w-[560px] items-center justify-between rounded-full border border-sapphire/20 bg-glass px-4 py-0 shadow-luxury backdrop-blur-2xl sm:max-w-[641px] sm:px-4"
             aria-label={t("nav.main")}
           >
-            <a
-              href="#hero"
+            <Link
+              to="/"
+              hash="hero"
               aria-label={t("nav.home")}
               className="m-0 flex h-full shrink-0 items-center pr-1.5 pl-0 opacity-95 transition-opacity hover:opacity-100 sm:pr-3"
             >
               <img
-                src={logoDionysos}
-                alt="Dionysos"
-                width={176}
-                height={70}
-                className="h-[42px] w-auto object-contain object-left sm:h-[44px]"
+                src={logoAthen}
+                alt="Restaurant Athen"
+                width={171}
+                height={24}
+                className="h-[22px] w-auto max-w-[min(100%,168px)] object-contain object-left sm:h-[26px]"
                 decoding="async"
               />
-            </a>
+            </Link>
 
             <div className="hidden h-full items-center gap-6 md:flex md:gap-7">
               {links.map((l) => (
@@ -79,7 +81,7 @@ export function Navbar() {
 
             <div className="flex h-full items-center gap-1.5 sm:gap-2">
               <div
-                className="hidden items-center rounded-full border border-white/10 bg-[rgba(22,18,15,0.35)] p-0.5 sm:flex"
+                className="hidden items-center rounded-full border border-sapphire/15 bg-glass-muted p-0.5 sm:flex"
                 role="group"
                 aria-label={t("lang.switch")}
               >
@@ -122,9 +124,9 @@ export function Navbar() {
           </nav>
 
           {open && (
-            <div className="pointer-events-auto absolute left-0 right-0 top-[calc(100%+0.5rem)] rounded-2xl border border-white/12 bg-[rgba(28,22,18,0.88)] p-6 backdrop-blur-xl md:hidden">
+            <div className="pointer-events-auto absolute left-0 right-0 top-[calc(100%+0.5rem)] rounded-2xl border border-sapphire/20 bg-glass-strong p-6 backdrop-blur-xl md:hidden">
               <div className="flex flex-col gap-5">
-                <div className="flex justify-center gap-1 rounded-full border border-white/10 bg-[rgba(22,18,15,0.45)] p-1">
+                <div className="flex justify-center gap-1 rounded-full border border-sapphire/15 bg-glass-muted p-1">
                   {(["de", "en"] as Locale[]).map((code) => (
                     <button
                       key={code}

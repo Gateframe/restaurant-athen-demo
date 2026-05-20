@@ -38,18 +38,16 @@
   --color-gold-soft: var(--gold-soft);
   --color-stone: var(--stone);
   --color-charcoal: var(--charcoal);
+  --color-navy: var(--navy);
+  --color-midnight: var(--midnight);
+  --color-sapphire: var(--sapphire);
 
   --font-serif: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-soft: 0 30px 80px -30px rgba(22, 16, 12, 0.55);
-  --shadow-card: 0 20px 60px -25px rgba(18, 14, 11, 0.65);
-  --gradient-overlay: linear-gradient(
-    180deg,
-    rgba(28, 22, 18, 0) 0%,
-    rgba(28, 22, 18, 0.14) 45%,
-    rgba(18, 14, 12, 0.78) 100%
-  );
+  --shadow-soft: var(--shadow-luxury);
+  --shadow-card: var(--shadow-elevated);
+  --gradient-overlay: var(--gradient-overlay-base);
 
   --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-fade-in: fade-in 1.2s ease-out both;
@@ -63,51 +61,63 @@
     to { opacity: 1; }
   }
 
-  /** Traveling highlight along an SVG stroke (reviews badge frame). */
-  @keyframes reviews-badge-spark-travel {
-    to {
-      stroke-dashoffset: -100;
-    }
-  }
 }
 
 :root {
   --radius: 0.875rem;
 
-  /* Dark luxury palette — warm graphite / brown-black (not pure black) */
-  --background: oklch(0.11 0.012 58);
-  --foreground: oklch(0.94 0.02 85);      /* ivory #f3efe2 */
+  /* Premium mix: midnight navy surfaces + warm ivory & gold accents */
+  --background: oklch(0.13 0.044 258);
+  --foreground: oklch(0.94 0.02 85);
 
-  --card: oklch(0.145 0.01 58);
+  --card: oklch(0.16 0.052 256);
   --card-foreground: oklch(0.94 0.02 85);
 
-  --popover: oklch(0.145 0.01 58);
+  --popover: oklch(0.16 0.05 256);
   --popover-foreground: oklch(0.94 0.02 85);
 
-  --primary: oklch(0.74 0.10 80);         /* gold #b7a46a */
-  --primary-foreground: oklch(0.1 0.012 58);
+  --primary: oklch(0.74 0.1 80);
+  --primary-foreground: oklch(0.12 0.044 258);
 
-  --secondary: oklch(0.17 0.01 58);
+  --secondary: oklch(0.18 0.05 256);
   --secondary-foreground: oklch(0.94 0.02 85);
 
-  --muted: oklch(0.17 0.01 58);
-  --muted-foreground: oklch(0.72 0.02 78);
+  --muted: oklch(0.18 0.048 257);
+  --muted-foreground: oklch(0.72 0.028 88);
 
-  --accent: oklch(0.74 0.10 80);
-  --accent-foreground: oklch(0.1 0.012 58);
+  --accent: oklch(0.74 0.1 80);
+  --accent-foreground: oklch(0.12 0.044 258);
 
-  --destructive: oklch(0.55 0.20 25);
+  --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: oklch(0.96 0.01 85);
 
-  --border: oklch(0.94 0.02 85 / 12%);
-  --input: oklch(0.94 0.02 85 / 14%);
-  --ring: oklch(0.74 0.10 80 / 60%);
+  --border: oklch(0.78 0.04 262 / 14%);
+  --input: oklch(0.88 0.03 260 / 12%);
+  --ring: oklch(0.74 0.1 80 / 55%);
 
   --ivory: oklch(0.94 0.02 85);
-  --gold: oklch(0.74 0.10 80);
-  --gold-soft: oklch(0.74 0.10 80 / 55%);
-  --stone: oklch(0.135 0.01 58);
-  --charcoal: oklch(0.175 0.01 58);
+  --gold: oklch(0.74 0.1 80);
+  --gold-soft: oklch(0.74 0.1 80 / 55%);
+  --stone: oklch(0.15 0.048 257);
+  --charcoal: oklch(0.19 0.054 254);
+  --navy: oklch(0.21 0.058 255);
+  --midnight: oklch(0.11 0.04 260);
+  --sapphire: oklch(0.42 0.09 252);
+
+  --glass: oklch(0.24 0.062 255 / 42%);
+  --glass-strong: oklch(0.18 0.056 256 / 88%);
+  --glass-muted: oklch(0.17 0.052 256 / 36%);
+
+  --shadow-luxury: 0 4px 32px rgba(6, 10, 28, 0.42);
+  --shadow-elevated: 0 30px 80px -30px rgba(6, 10, 28, 0.58);
+  --shadow-card-deep: 0 20px 60px -25px rgba(4, 8, 22, 0.72);
+
+  --gradient-overlay-base: linear-gradient(
+    180deg,
+    rgba(14, 20, 42, 0) 0%,
+    rgba(14, 20, 42, 0.16) 45%,
+    rgba(8, 12, 30, 0.82) 100%
+  );
 }
 
 @layer base {
@@ -150,7 +160,125 @@
   }
 
   .gradient-overlay {
-    background: var(--gradient-overlay);
+    background: var(--gradient-overlay-base);
+  }
+
+  .bg-glass {
+    background: var(--glass);
+  }
+
+  .bg-glass-strong {
+    background: var(--glass-strong);
+  }
+
+  .bg-glass-muted {
+    background: var(--glass-muted);
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-shadow-hero {
+    text-shadow:
+      0 1px 2px rgba(6, 10, 26, 0.5),
+      0 4px 40px rgba(0, 0, 0, 0.35),
+      0 0 72px rgba(243, 239, 226, 0.12);
+  }
+
+  .hero-overlay-t {
+    background: linear-gradient(
+      to top,
+      rgba(22, 30, 58, 0.58) 0%,
+      rgba(14, 20, 42, 0.3) 50%,
+      rgba(8, 12, 28, 0.06) 100%
+    );
+  }
+
+  .hero-overlay-r {
+    background: linear-gradient(
+      to right,
+      rgba(26, 34, 62, 0.44) 0%,
+      rgba(14, 20, 42, 0.16) 55%,
+      transparent 100%
+    );
+  }
+
+  @media (min-width: 640px) {
+    .hero-overlay-r {
+      background: linear-gradient(
+        to right,
+        rgba(22, 30, 56, 0.38) 0%,
+        rgba(14, 20, 42, 0.14) 55%,
+        transparent 100%
+      );
+    }
+  }
+
+  .hero-overlay-radial {
+    background: radial-gradient(
+      ellipse at bottom left,
+      rgba(42, 56, 98, 0.3) 0%,
+      rgba(18, 26, 48, 0.1) 42%,
+      transparent 58%
+    );
+  }
+
+  .card-overlay-t {
+    background: linear-gradient(
+      to top,
+      rgba(22, 30, 56, 0.64) 0%,
+      rgba(14, 20, 40, 0.22) 55%,
+      rgba(8, 12, 26, 0.05) 100%
+    );
+  }
+
+  .group:hover .card-overlay-t {
+    background: linear-gradient(
+      to top,
+      rgba(22, 30, 56, 0.74) 0%,
+      rgba(14, 20, 40, 0.22) 55%,
+      rgba(8, 12, 26, 0.05) 100%
+    );
+  }
+
+  .reservation-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(8, 12, 28, 0.88) 0%,
+      rgba(10, 16, 36, 0.62) 45%,
+      rgba(8, 12, 30, 0.48) 100%
+    );
+  }
+
+  .menu-hero-overlay-l {
+    background: linear-gradient(
+      to right,
+      rgba(8, 12, 30, 0.9) 0%,
+      rgba(10, 16, 36, 0.58) 50%,
+      rgba(12, 18, 40, 0.36) 100%
+    );
+  }
+
+  .menu-hero-overlay-t {
+    background: linear-gradient(
+      to top,
+      var(--color-background) 0%,
+      transparent 55%,
+      rgba(10, 16, 36, 0.32) 100%
+    );
+  }
+
+  .menu-panel-overlay {
+    background: linear-gradient(
+      115deg,
+      rgba(10, 14, 32, 0.94) 0%,
+      rgba(14, 20, 44, 0.76) 100%
+    );
   }
 
   .reveal {
@@ -163,25 +291,4 @@
     transform: translateY(0);
   }
 
-  /** Rounded rect matches Hero reviews chip: 14px mobile, 18px sm+. */
-  .reviews-badge-spark-ring {
-    rx: 14px;
-    ry: 14px;
-  }
-  @media (min-width: 640px) {
-    .reviews-badge-spark-ring {
-      rx: 18px;
-      ry: 18px;
-    }
-  }
-
-  .reviews-badge-spark-travel {
-    animation: reviews-badge-spark-travel 3.2s linear infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reviews-badge-spark-travel {
-      animation: none;
-    }
-  }
 }

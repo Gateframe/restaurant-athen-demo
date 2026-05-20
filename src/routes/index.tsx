@@ -7,10 +7,11 @@ import { ReservationCTA } from "@/components/landing/ReservationCTA";
 import { Gallery } from "@/components/landing/Gallery";
 import { Footer } from "@/components/landing/Footer";
 import { translations } from "@/i18n/translations";
+import { CONTACT, OPENING_HOURS } from "@/lib/contact";
 
 const de = translations.de;
 
-/** Set `VITE_SITE_URL` (e.g. https://restaurantdionysos.com) in production so og:image is an absolute URL. */
+/** Set `VITE_SITE_URL` (e.g. https://restaurant-athen.de) in production so og:image is an absolute URL. */
 function ogImageUrl(): string {
   const path = "/og-hero.png";
   const base = import.meta.env.VITE_SITE_URL;
@@ -23,47 +24,35 @@ function ogImageUrl(): string {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: "Dionysos",
+  name: "Restaurant Athen",
   description: de["meta.rootDesc"],
   servesCuisine: ["Greek", "Mediterranean"],
   priceRange: "$$$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Freisinger Str. 3",
-    addressLocality: "Eching",
-    postalCode: "85386",
+    streetAddress: CONTACT.street,
+    addressLocality: CONTACT.city,
+    postalCode: CONTACT.postalCode,
     addressCountry: "DE",
   },
-  telephone: "+49 81 65 707 744",
-  openingHours: [
-    "Mo-Th,Su 11:00-15:00",
-    "Mo-Th,Su 17:30-23:00",
-    "Fr-Sa 11:00-15:00",
-    "Fr-Sa 17:30-00:00",
-  ],
+  telephone: CONTACT.phoneTel,
+  email: CONTACT.email,
+  openingHours: [...OPENING_HOURS.schemaOrg],
   image: ogImageUrl(),
 };
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dionysos — Exklusive Griechische Kulinarik" },
-      {
-        name: "description",
-        content:
-          "Dionysos: exklusive griechische Kulinarik — edles Ambiente, saisonale Küche und ein unvergessliches Erlebnis.",
-      },
-      { property: "og:title", content: "Dionysos — Exklusive Griechische Kulinarik" },
-      {
-        property: "og:description",
-        content:
-          "Raffinierte griechische Küche in stilvollem Rahmen. Reservieren Sie Ihren Tisch.",
-      },
+      { title: de["meta.rootTitle"] },
+      { name: "description", content: de["meta.rootDesc"] },
+      { property: "og:title", content: de["meta.rootTitle"] },
+      { property: "og:description", content: de["meta.rootDesc"] },
       { property: "og:type", content: "website" },
       { property: "og:image", content: ogImageUrl() },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Dionysos — Hero" },
+      { property: "og:image:alt", content: "Restaurant Athen — Hero" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: ogImageUrl() },
     ],
